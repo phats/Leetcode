@@ -1,0 +1,11 @@
+		ARRAY AND STRING
+1.	Sử dụng Vector thay cho cấp phát động mảng;
+2.	Ở các bài tập mảng 2 chiều chuyền thành mảng 1 chiều :
++ Bài Spiral Matrix: giả lập đường đi của bài toán.
++ Bài Diagonal Traverse: đi theo chiều tự nhiên, sau đó chỉnh sửa lại theo yêu cầu bài toán.
+3.	Sử dụng 2 con trỏ ở những bài toán như :
++ Xét đối với 1 cặp phần tử của mảng.
++ Mảng đầu vào là mảng đã được sort.
++ Tìm số phần tử liền kề theo yêu cầu bài toán.
+4.	String là 1 vector<char> có thể sử dụng các hàm của vector;
+
