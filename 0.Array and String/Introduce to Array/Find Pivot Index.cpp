@@ -1,18 +1,26 @@
-class Solution {
-public:
-    int sum_in_i(int i, vector<int>& nums) {
-        int sum = 0;
-        for (int j = 0; j < i; j++) {
-            sum = sum + nums[j];
+#include<iostream>
+#include<vector>
+using namespace std;
+int thirdMax(vector<int>& nums) {
+    vector<int> find{ INT_MIN , INT_MIN, INT_MIN };
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] >= find[1]) {
+            if (nums[i] > find[0]) {
+                find[2] = find[1];
+                find[1] = find[0];
+                find[0] = nums[i];
+            }
+            else if (nums[i] > find[1]) {
+                find[2] = find[1];
+                find[1] = nums[i];
+            }
         }
-        return sum;
+        else find[2] = max(find[2], nums[i]);
     }
-    int pivotIndex(vector<int>& nums) {
-        int sum_nums = sum_in_i(nums.size(), nums);
-        for (int i = 0; i < nums.size(); i++) {
-            if (sum_in_i(i, nums) == sum_nums - sum_in_i(i, nums) - nums[i])
-                return i;
-        }
-        return -1;
-    }
-};
+    if (nums.size() < 3) return find[0];
+    return find[2];
+}
+int main() {
+    vector<int> a{ 2,2,3,1 };
+    cout << thirdMax(a);
+}
