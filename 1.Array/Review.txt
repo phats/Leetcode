@@ -1,0 +1,2 @@
+			ARRAY 101
+1. Han che su dung vong lap de giam do phuc tap cua thuat toan, giam do phuc tap cua thuat toan xuong O(N);
