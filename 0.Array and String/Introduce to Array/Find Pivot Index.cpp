@@ -1,26 +1,28 @@
-#include<iostream>
-#include<vector>
-using namespace std;
-int thirdMax(vector<int>& nums) {
-    vector<int> find{ INT_MIN , INT_MIN, INT_MIN };
-    for (int i = 0; i < nums.size(); i++) {
-        if (nums[i] >= find[1]) {
-            if (nums[i] > find[0]) {
-                find[2] = find[1];
-                find[1] = find[0];
-                find[0] = nums[i];
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        vector<int> preFixSum;
+        //Create PreFixSum
+        preFixSum.push_back(nums[0]);
+        for (int i=1;i<nums.size();i++){
+            preFixSum.push_back(nums[i]+preFixSum[i-1]);
+        }
+        //Find Pivot Index
+        int sumLeft;
+        int sumRight;
+        for (int i=0;i<nums.size();i++){
+            if (i==0){
+                sumLeft=0;
             }
-            else if (nums[i] > find[1]) {
-                find[2] = find[1];
-                find[1] = nums[i];
+            else{
+                sumLeft=preFixSum[i-1];
+            }
+            sumRight=preFixSum[preFixSum.size()-1]-sumLeft-nums[i];
+            if (sumLeft==sumRight){
+                return i;
             }
         }
-        else find[2] = max(find[2], nums[i]);
-    }
-    if (nums.size() < 3) return find[0];
-    return find[2];
-}
-int main() {
-    vector<int> a{ 2,2,3,1 };
-    cout << thirdMax(a);
-}
+        //Not found Pivot Index 
+        return -1;
+ }
+};
