@@ -1,25 +1,17 @@
 class Solution {
 public:
-    vector<string> StringtoVector(string s){
-        vector<string> result;
-        string tam;
-        for (int i=0;i<s.size();i++){
-            if (s[i] !=' ') tam=tam+s[i];
-            if (tam !="" && (s[i]==' ' || i==s.size()-1)){
-                result.push_back(tam);
-                tam="";
+    string reverseWords(string s){
+        int countChar=0;
+        for (int i=0;i<s.length();i++){
+            if (s[i]==' '){
+                reverse(s.begin()+i-countChar,s.begin()+i);
+                countChar=0;
+            }
+            else{
+                ++countChar;
             }
         }
-        return result;
-    }
-    string reverseWords(string s) {
-        string result;
-       vector<string> result_arr = StringtoVector(s);
-        for (int i = 0; i < result_arr.size(); i++) {
-            reverse(result_arr[i].begin(), result_arr[i].end());
-            result += result_arr[i] + " ";
-        }
-        result.pop_back();
-        return result;
+        reverse(s.end()-countChar,s.end());
+        return s;
     }
 };
