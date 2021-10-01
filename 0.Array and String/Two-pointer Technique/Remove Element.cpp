@@ -1,11 +1,29 @@
 class Solution {
 public:
+    void swap(int& a,int& b){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
     int removeElement(vector<int>& nums, int val) {
-        for (int i=0;i<nums.size();i++){
-            if (nums[i]==val){
-                nums.erase(nums.begin()+i,nums.begin()+i+1);
-                i--;
+        int count =0;
+        int i=0,j=nums.size()-1;
+        
+        while(i<=j){
+            if (nums[j]==val){
+                --j;
+                ++count;
+                continue;
             }
+            else if (nums[i]==val) {
+                swap(nums[i],nums[j]);
+                --j;
+                ++count;
+            }
+            ++i;
+        }
+        if (count){
+            nums.erase(nums.end()-count,nums.end());
         }
         return nums.size();
     }
