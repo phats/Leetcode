@@ -1,39 +1,31 @@
 class Solution {
 public:
     string addBinary(string a, string b) {
-        if (a.size() < b.size()) {
-            string temp = b;
-            b = a;
-            a = temp;
-        }
-        while (b.size() < a.size()) {
-            b = "0" + b;
-        }
+        int i=a.length()-1,j=b.length()-1;
+        int temp=0;
         string result;
-        int sum=0;
-        int nho=0;
-        for (int i=a.size();i>=0;i--){
-            sum=(a[i]-'0')+(b[i]-'0')+nho;
-            if (sum==2){
-                result="0"+result;
-                nho=1;
-            }
-            else if (sum==3){
-                result="1"+result;
-                nho=1;
-            }
-            else if (sum==0){
-                result="0"+result;
-                nho=0;
-            }
-            else if (sum==1){
-                result="1"+result;
-                nho=0;
-            }
+        while(i>=0 &&j>=0){
+            temp += (a[i]-'0')+(b[j]-'0');
+            result=to_string(temp%2)+result;
+            temp /=2;
+            --j;
+            --i;
         }
-        if (nho==1) {
-            result="1"+result;
+        while (i>=0){
+            temp += (a[i]-'0');
+            result=to_string(temp%2)+result;
+            temp /=2;
+            --i;
+        }
+        while (j>=0){
+            temp += (b[j]-'0');
+            result=to_string(temp%2)+result;
+            temp /=2;
+            --j;
+        }
+        if (temp){
+            result=to_string(temp)+result;
         }
         return result;
-    }
+        }
 };

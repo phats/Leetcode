@@ -6,7 +6,7 @@ public:
         for (int i=1;i<strs.size();i++){
             for (int j=0;j<result.size();j++){
                 if (result[j]!=strs[i][j]){
-                    result.erase(j,result.size()-j);
+                    result=result.substr(0,j);
                 }
             }
         }
