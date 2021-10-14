@@ -1,0 +1,5 @@
+                REVIEW RECURSION
+1. Chú trọng các base case;
+2. Sử dụng RECURSION không tốt sẽ xảy ra gọi vòng lặp nhiều lần =>> không tối ưu thuật toán, thời gian sử  lý
+=>> Giải pháp: sử dụng Hash table để lưu các giá trị hàm đã gọi (chưa học :v)
+3. Độ phức tạp thời gian của thuật toán = số lần gọi * (độ phức tạp của mỗi lần gọi)
