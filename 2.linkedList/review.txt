@@ -1,0 +1,9 @@
+            REVIEW LINKED LIST
+1. Vẽ ra giấy dễ  debug hơn :v
+2. Two-Pointer in Linked List:
+    +Kỹ thuật quan trọng giúp giảm độ phức tạp của thuật toán;
+3. Sử dụng các node previous, current, next để quản lý Linked List;
+4. Các bug thường gặp phải :
+    + NULL->next: luôn phải check con trỏ trước khi cho nó trỏ tới next;
+    + Lặp vô tân: khi nối các node, chú ý tránh thành liên kết vòng;
+    + Mất p->next: thường gặp khi thay đổi liên kết trong list, làm mất p->next;
