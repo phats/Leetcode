@@ -4,7 +4,7 @@ public:
         int left = 0;
         int right = 0;
         int res = 0;
-
+    //khoi tao bien
         if (nums.size() == 0)
             return res;
         else{

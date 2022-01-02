@@ -1,0 +1,7 @@
+BINARY SEARCH TREE
+1. Uu diem:
+    + Them va xoa vao 1 mang da sap xep voi do phuc tap thoi gian chi O(h);
+2. Nhuoc diem:
+    + Khi them vao cay 1 mang da sap xep thi cay suy thoai thanh mang;
+3. Khac phuc:
+    + Su dung cay tu can bang nhu AVL;
