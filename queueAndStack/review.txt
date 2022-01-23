@@ -1,0 +1,5 @@
+-------REVIEW QUEUE AND STACK-------
+1. Co the dung stack de khu de quy.
+2. Queue -> BFS.
+3. Stack -> DFS.
+4. Ung dung vao thuat toan tim duong di, cac phan khac nhau trong mang 2 chieu.
