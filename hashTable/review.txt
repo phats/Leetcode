@@ -1,0 +1,9 @@
+------REVIEW HASH TABLE------
+1. Dung tim kiem trong mang rat nhanh ~ O(1).
+2. Dung hash set de tim kiem phan tu trung va hash map de lap thanh cac nhom.
+3. Thiet ke key:
+    - Doi voi mang, khong can thu tu, ta co the sort de lam key.
+    - Doi voi cay, ta dung phep duyet cay.
+    - Doi voi ma tran, dung dong, cot de la key.
+    - Doi voi box 3x3 co the dung: (i,j)-> (i/3)*3+j/3.
+    - Mot vai truong hop, dung duong cheo (i,j)-> i+j hoac (i,j)->i-j.
